@@ -1,0 +1,776 @@
+{
+  "id": 16,
+  "task": {
+    "id": 3,
+    "name": "Flight delay day/hour",
+    "owner": 1,
+    "dataset": 8,
+    "dataset_name": "Derived no cancel/reroute",
+    "procedure": "fourftMiner",
+    "params": {
+      "ante": {
+        "type": "con",
+        "maxlen": 3,
+        "minlen": 1,
+        "attributes": [
+          {
+            "gace": "positive",
+            "name": "DayOfWeek",
+            "maxlen": 3,
+            "minlen": 1,
+            "attr_type": "seq"
+          },
+          {
+            "gace": "positive",
+            "name": "SchedDepTime",
+            "maxlen": 3,
+            "minlen": 1,
+            "attr_type": "seq"
+          }
+        ]
+      },
+      "cond": {
+        "type": "con",
+        "maxlen": 1,
+        "minlen": 1,
+        "attributes": []
+      },
+      "opts": {
+        "no_optimizations": false
+      },
+      "set1": {
+        "type": "con",
+        "maxlen": 5,
+        "minlen": 1,
+        "attributes": []
+      },
+      "set2": {
+        "type": "con",
+        "maxlen": 5,
+        "minlen": 1,
+        "attributes": []
+      },
+      "succ": {
+        "type": "con",
+        "maxlen": 1,
+        "minlen": 1,
+        "attributes": [
+          {
+            "gace": "positive",
+            "name": "ArrDel15",
+            "value": "Yes",
+            "attr_type": "one"
+          }
+        ]
+      },
+      "quantifiers": {
+        "aad": 0.3,
+        "bad": null,
+        "Base": 2000,
+        "conf": 0.25,
+        "RelBase": null
+      }
+    },
+    "created_at": "2026-10-30T14:25:04.680185+01:00",
+    "updated_at": "2026-10-30T15:01:03.158563+01:00",
+    "project": null
+  },
+  "status": "done",
+  "result": {
+    "rules": [
+      {
+        "id": 1,
+        "text": " DayOfWeek(1_Mon) & SchedDepTime(3_Midday_10_14 4_Afternoon_14_18 5_Evening_18_24) => ArrDel15(Yes) | ---",
+        "structure": {
+          "ante": [
+            {
+              "variable": "DayOfWeek",
+              "categories": [
+                "1_Mon"
+              ]
+            },
+            {
+              "variable": "SchedDepTime",
+              "categories": [
+                "3_Midday_10_14",
+                "4_Afternoon_14_18",
+                "5_Evening_18_24"
+              ]
+            }
+          ],
+          "cond": [],
+          "succ": [
+            {
+              "variable": "ArrDel15",
+              "categories": [
+                "Yes"
+              ]
+            }
+          ]
+        },
+        "chart_path": "charts/run_16/rule_1.png",
+        "quantifiers": {
+          "aad": 0.3333856185396875,
+          "bad": -0.3333856185396875,
+          "base": 12478,
+          "conf": 0.25053206440991044,
+          "fourfold": [
+            12478,
+            37328,
+            85652,
+            386811
+          ],
+          "rel_base": 0.023891902448738102
+        }
+      },
+      {
+        "id": 2,
+        "text": " DayOfWeek(1_Mon) & SchedDepTime(4_Afternoon_14_18) => ArrDel15(Yes) | ---",
+        "structure": {
+          "ante": [
+            {
+              "variable": "DayOfWeek",
+              "categories": [
+                "1_Mon"
+              ]
+            },
+            {
+              "variable": "SchedDepTime",
+              "categories": [
+                "4_Afternoon_14_18"
+              ]
+            }
+          ],
+          "cond": [],
+          "succ": [
+            {
+              "variable": "ArrDel15",
+              "categories": [
+                "Yes"
+              ]
+            }
+          ]
+        },
+        "chart_path": "charts/run_16/rule_2.png",
+        "quantifiers": {
+          "aad": 0.38554557738365935,
+          "bad": -0.38554557738365935,
+          "base": 4510,
+          "conf": 0.2603324867236204,
+          "fourfold": [
+            4510,
+            12814,
+            93620,
+            411325
+          ],
+          "rel_base": 0.008635396701699698
+        }
+      },
+      {
+        "id": 3,
+        "text": " DayOfWeek(1_Mon) & SchedDepTime(4_Afternoon_14_18 5_Evening_18_24) => ArrDel15(Yes) | ---",
+        "structure": {
+          "ante": [
+            {
+              "variable": "DayOfWeek",
+              "categories": [
+                "1_Mon"
+              ]
+            },
+            {
+              "variable": "SchedDepTime",
+              "categories": [
+                "4_Afternoon_14_18",
+                "5_Evening_18_24"
+              ]
+            }
+          ],
+          "cond": [],
+          "succ": [
+            {
+              "variable": "ArrDel15",
+              "categories": [
+                "Yes"
+              ]
+            }
+          ]
+        },
+        "chart_path": "charts/run_16/rule_3.png",
+        "quantifiers": {
+          "aad": 0.4106099036259181,
+          "bad": -0.4106099036259181,
+          "base": 8515,
+          "conf": 0.26504186509789274,
+          "fourfold": [
+            8515,
+            23612,
+            89615,
+            400527
+          ],
+          "rel_base": 0.016303858739461847
+        }
+      },
+      {
+        "id": 4,
+        "text": " DayOfWeek(1_Mon) & SchedDepTime(5_Evening_18_24) => ArrDel15(Yes) | ---",
+        "structure": {
+          "ante": [
+            {
+              "variable": "DayOfWeek",
+              "categories": [
+                "1_Mon"
+              ]
+            },
+            {
+              "variable": "SchedDepTime",
+              "categories": [
+                "5_Evening_18_24"
+              ]
+            }
+          ],
+          "cond": [],
+          "succ": [
+            {
+              "variable": "ArrDel15",
+              "categories": [
+                "Yes"
+              ]
+            }
+          ]
+        },
+        "chart_path": "charts/run_16/rule_4.png",
+        "quantifiers": {
+          "aad": 0.43994276776297725,
+          "bad": -0.43994276776297725,
+          "base": 4005,
+          "conf": 0.2705532662298183,
+          "fourfold": [
+            4005,
+            10798,
+            94125,
+            413341
+          ],
+          "rel_base": 0.007668462037762149
+        }
+      },
+      {
+        "id": 5,
+        "text": " DayOfWeek(5_Fri 6_Sat 7_Sun) & SchedDepTime(4_Afternoon_14_18 5_Evening_18_24) => ArrDel15(Yes) | ---",
+        "structure": {
+          "ante": [
+            {
+              "variable": "DayOfWeek",
+              "categories": [
+                "5_Fri",
+                "6_Sat",
+                "7_Sun"
+              ]
+            },
+            {
+              "variable": "SchedDepTime",
+              "categories": [
+                "4_Afternoon_14_18",
+                "5_Evening_18_24"
+              ]
+            }
+          ],
+          "cond": [],
+          "succ": [
+            {
+              "variable": "ArrDel15",
+              "categories": [
+                "Yes"
+              ]
+            }
+          ]
+        },
+        "chart_path": "charts/run_16/rule_5.png",
+        "quantifiers": {
+          "aad": 0.3363296949058523,
+          "bad": -0.3363296949058523,
+          "base": 25161,
+          "conf": 0.2510852318654013,
+          "fourfold": [
+            25161,
+            75048,
+            72969,
+            349091
+          ],
+          "rel_base": 0.04817632292937164
+        }
+      },
+      {
+        "id": 6,
+        "text": " DayOfWeek(5_Fri 6_Sat 7_Sun) & SchedDepTime(5_Evening_18_24) => ArrDel15(Yes) | ---",
+        "structure": {
+          "ante": [
+            {
+              "variable": "DayOfWeek",
+              "categories": [
+                "5_Fri",
+                "6_Sat",
+                "7_Sun"
+              ]
+            },
+            {
+              "variable": "SchedDepTime",
+              "categories": [
+                "5_Evening_18_24"
+              ]
+            }
+          ],
+          "cond": [],
+          "succ": [
+            {
+              "variable": "ArrDel15",
+              "categories": [
+                "Yes"
+              ]
+            }
+          ]
+        },
+        "chart_path": "charts/run_16/rule_6.png",
+        "quantifiers": {
+          "aad": 0.36850125655485155,
+          "bad": -0.36850125655485155,
+          "base": 12000,
+          "conf": 0.257130000642825,
+          "fourfold": [
+            12000,
+            34669,
+            86130,
+            389470
+          ],
+          "rel_base": 0.022976665281684343
+        }
+      },
+      {
+        "id": 7,
+        "text": " DayOfWeek(6_Sat) & SchedDepTime(5_Evening_18_24) => ArrDel15(Yes) | ---",
+        "structure": {
+          "ante": [
+            {
+              "variable": "DayOfWeek",
+              "categories": [
+                "6_Sat"
+              ]
+            },
+            {
+              "variable": "SchedDepTime",
+              "categories": [
+                "5_Evening_18_24"
+              ]
+            }
+          ],
+          "cond": [],
+          "succ": [
+            {
+              "variable": "ArrDel15",
+              "categories": [
+                "Yes"
+              ]
+            }
+          ]
+        },
+        "chart_path": "charts/run_16/rule_7.png",
+        "quantifiers": {
+          "aad": 0.36339754599822105,
+          "bad": -0.36339754599822105,
+          "base": 3103,
+          "conf": 0.2561710558903657,
+          "fourfold": [
+            3103,
+            9010,
+            95027,
+            415129
+          ],
+          "rel_base": 0.00594138269742221
+        }
+      },
+      {
+        "id": 8,
+        "text": " DayOfWeek(6_Sat 7_Sun) & SchedDepTime(4_Afternoon_14_18) => ArrDel15(Yes) | ---",
+        "structure": {
+          "ante": [
+            {
+              "variable": "DayOfWeek",
+              "categories": [
+                "6_Sat",
+                "7_Sun"
+              ]
+            },
+            {
+              "variable": "SchedDepTime",
+              "categories": [
+                "4_Afternoon_14_18"
+              ]
+            }
+          ],
+          "cond": [],
+          "succ": [
+            {
+              "variable": "ArrDel15",
+              "categories": [
+                "Yes"
+              ]
+            }
+          ]
+        },
+        "chart_path": "charts/run_16/rule_8.png",
+        "quantifiers": {
+          "aad": 0.36389328673542964,
+          "bad": -0.36389328673542964,
+          "base": 8233,
+          "conf": 0.25626420145049333,
+          "fourfold": [
+            8233,
+            23894,
+            89897,
+            400245
+          ],
+          "rel_base": 0.015763907105342267
+        }
+      },
+      {
+        "id": 9,
+        "text": " DayOfWeek(6_Sat 7_Sun) & SchedDepTime(4_Afternoon_14_18 5_Evening_18_24) => ArrDel15(Yes) | ---",
+        "structure": {
+          "ante": [
+            {
+              "variable": "DayOfWeek",
+              "categories": [
+                "6_Sat",
+                "7_Sun"
+              ]
+            },
+            {
+              "variable": "SchedDepTime",
+              "categories": [
+                "4_Afternoon_14_18",
+                "5_Evening_18_24"
+              ]
+            }
+          ],
+          "cond": [],
+          "succ": [
+            {
+              "variable": "ArrDel15",
+              "categories": [
+                "Yes"
+              ]
+            }
+          ]
+        },
+        "chart_path": "charts/run_16/rule_9.png",
+        "quantifiers": {
+          "aad": 0.39951859989802374,
+          "bad": -0.39951859989802374,
+          "base": 15778,
+          "conf": 0.26295790140328656,
+          "fourfold": [
+            15778,
+            44224,
+            82352,
+            379915
+          ],
+          "rel_base": 0.030210485401201297
+        }
+      },
+      {
+        "id": 10,
+        "text": " DayOfWeek(6_Sat 7_Sun) & SchedDepTime(5_Evening_18_24) => ArrDel15(Yes) | ---",
+        "structure": {
+          "ante": [
+            {
+              "variable": "DayOfWeek",
+              "categories": [
+                "6_Sat",
+                "7_Sun"
+              ]
+            },
+            {
+              "variable": "SchedDepTime",
+              "categories": [
+                "5_Evening_18_24"
+              ]
+            }
+          ],
+          "cond": [],
+          "succ": [
+            {
+              "variable": "ArrDel15",
+              "categories": [
+                "Yes"
+              ]
+            }
+          ]
+        },
+        "chart_path": "charts/run_16/rule_10.png",
+        "quantifiers": {
+          "aad": 0.44057813123343736,
+          "bad": -0.44057813123343736,
+          "base": 7545,
+          "conf": 0.2706726457399103,
+          "fourfold": [
+            7545,
+            20330,
+            90585,
+            403809
+          ],
+          "rel_base": 0.01444657829585903
+        }
+      },
+      {
+        "id": 11,
+        "text": " DayOfWeek(7_Sun) & SchedDepTime(3_Midday_10_14 4_Afternoon_14_18 5_Evening_18_24) => ArrDel15(Yes) | ---",
+        "structure": {
+          "ante": [
+            {
+              "variable": "DayOfWeek",
+              "categories": [
+                "7_Sun"
+              ]
+            },
+            {
+              "variable": "SchedDepTime",
+              "categories": [
+                "3_Midday_10_14",
+                "4_Afternoon_14_18",
+                "5_Evening_18_24"
+              ]
+            }
+          ],
+          "cond": [],
+          "succ": [
+            {
+              "variable": "ArrDel15",
+              "categories": [
+                "Yes"
+              ]
+            }
+          ]
+        },
+        "chart_path": "charts/run_16/rule_11.png",
+        "quantifiers": {
+          "aad": 0.36605366137630657,
+          "bad": -0.36605366137630657,
+          "base": 12891,
+          "conf": 0.2566701178719337,
+          "fourfold": [
+            12891,
+            37333,
+            85239,
+            386806
+          ],
+          "rel_base": 0.024682682678849405
+        }
+      },
+      {
+        "id": 12,
+        "text": " DayOfWeek(7_Sun) & SchedDepTime(4_Afternoon_14_18) => ArrDel15(Yes) | ---",
+        "structure": {
+          "ante": [
+            {
+              "variable": "DayOfWeek",
+              "categories": [
+                "7_Sun"
+              ]
+            },
+            {
+              "variable": "SchedDepTime",
+              "categories": [
+                "4_Afternoon_14_18"
+              ]
+            }
+          ],
+          "cond": [],
+          "succ": [
+            {
+              "variable": "ArrDel15",
+              "categories": [
+                "Yes"
+              ]
+            }
+          ]
+        },
+        "chart_path": "charts/run_16/rule_12.png",
+        "quantifiers": {
+          "aad": 0.4449467862506178,
+          "bad": -0.4449467862506178,
+          "base": 4601,
+          "conf": 0.27149347967191834,
+          "fourfold": [
+            4601,
+            12346,
+            93529,
+            411793
+          ],
+          "rel_base": 0.008809636413419138
+        }
+      },
+      {
+        "id": 13,
+        "text": " DayOfWeek(7_Sun) & SchedDepTime(4_Afternoon_14_18 5_Evening_18_24) => ArrDel15(Yes) | ---",
+        "structure": {
+          "ante": [
+            {
+              "variable": "DayOfWeek",
+              "categories": [
+                "7_Sun"
+              ]
+            },
+            {
+              "variable": "SchedDepTime",
+              "categories": [
+                "4_Afternoon_14_18",
+                "5_Evening_18_24"
+              ]
+            }
+          ],
+          "cond": [],
+          "succ": [
+            {
+              "variable": "ArrDel15",
+              "categories": [
+                "Yes"
+              ]
+            }
+          ]
+        },
+        "chart_path": "charts/run_16/rule_13.png",
+        "quantifiers": {
+          "aad": 0.47142358739322,
+          "bad": -0.47142358739322,
+          "base": 9043,
+          "conf": 0.27646825032865574,
+          "fourfold": [
+            9043,
+            23666,
+            89087,
+            400473
+          ],
+          "rel_base": 0.01731483201185596
+        }
+      },
+      {
+        "id": 14,
+        "text": " DayOfWeek(7_Sun) & SchedDepTime(5_Evening_18_24) => ArrDel15(Yes) | ---",
+        "structure": {
+          "ante": [
+            {
+              "variable": "DayOfWeek",
+              "categories": [
+                "7_Sun"
+              ]
+            },
+            {
+              "variable": "SchedDepTime",
+              "categories": [
+                "5_Evening_18_24"
+              ]
+            }
+          ],
+          "cond": [],
+          "succ": [
+            {
+              "variable": "ArrDel15",
+              "categories": [
+                "Yes"
+              ]
+            }
+          ]
+        },
+        "chart_path": "charts/run_16/rule_14.png",
+        "quantifiers": {
+          "aad": 0.49989093601418744,
+          "bad": -0.49989093601418744,
+          "base": 4442,
+          "conf": 0.28181702829590155,
+          "fourfold": [
+            4442,
+            11320,
+            93688,
+            412819
+          ],
+          "rel_base": 0.008505195598436821
+        }
+      }
+    ],
+    "summary": {
+      "rule_count": 14
+    }
+  },
+  "error_log": null,
+  "created_at": "2026-10-30T15:01:03.183394+01:00",
+  "started_at": "2026-10-30T15:01:03.200064+01:00",
+  "finished_at": "2026-10-30T15:01:04.901416+01:00",
+  "result_summary": {
+    "has_result": true,
+    "rule_count": 14,
+    "target": null
+  },
+  "run_snapshot": {
+    "ante": {
+      "type": "con",
+      "maxlen": 3,
+      "minlen": 1,
+      "attributes": [
+        {
+          "gace": "positive",
+          "name": "DayOfWeek",
+          "maxlen": 3,
+          "minlen": 1,
+          "attr_type": "seq"
+        },
+        {
+          "gace": "positive",
+          "name": "SchedDepTime",
+          "maxlen": 3,
+          "minlen": 1,
+          "attr_type": "seq"
+        }
+      ]
+    },
+    "cond": {
+      "type": "con",
+      "maxlen": 1,
+      "minlen": 1,
+      "attributes": []
+    },
+    "opts": {
+      "no_optimizations": false
+    },
+    "set1": {
+      "type": "con",
+      "maxlen": 5,
+      "minlen": 1,
+      "attributes": []
+    },
+    "set2": {
+      "type": "con",
+      "maxlen": 5,
+      "minlen": 1,
+      "attributes": []
+    },
+    "succ": {
+      "type": "con",
+      "maxlen": 1,
+      "minlen": 1,
+      "attributes": [
+        {
+          "gace": "positive",
+          "name": "ArrDel15",
+          "value": "Yes",
+          "attr_type": "one"
+        }
+      ]
+    },
+    "quantifiers": {
+      "aad": 0.3,
+      "bad": null,
+      "Base": 2000,
+      "conf": 0.25,
+      "RelBase": null
+    }
+  }
+}
