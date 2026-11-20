@@ -8,6 +8,7 @@ Handoff z chatu na claude.ai. Pokračujeme v Bloku 2 ve VS Code.
 - **Blok 2** musí být udělán explicitně za pomoci AI. Uživatel dokumentuje použité prompty, takže drž kroky přehledné a reprodukovatelné.
 - **Nepoužívat** (dělá kolega): SDCF-like (rozložení času odletu zpožděných letů krátké vs. dlouhé), Action-rule-like (změna časového bloku), KL-like (závislost Airline/OriginRegion a ArrDel15), SDKL-like (Airline × ArrDel15 krátké vs. dlouhé lety).
 - Skripty se budují postupně, jeden po druhém. Po každém skriptu ho spusť a ověř výstupy.
+- **Výstupy:** všechny skripty musí ukládat výsledky (grafy, CSV, metriky) do složky `outputs/` (podsložka per úloha, např. `outputs/task1/`). Složka je v `.gitignore`.
 
 ## Úlohy uživatele v Bloku 2
 1. **XAI: SHAP** – LightGBM predikce ArrDel15, globální a lokální vysvětlení.
