@@ -221,3 +221,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Raw dataset (too large for GitHub); use the .csv.gz
+flight_delays_2025_01.csv
