@@ -1,7 +1,5 @@
 # CLAUDE.md – semestrální projekt 4IZ457 (VŠE)
 
-Handoff z chatu na claude.ai. Pokračujeme v Bloku 2 ve VS Code.
-
 ## Zadání a pravidla
 - Kurz 4IZ457, dataset **US Flight Delays 2025-01** (BTS On-Time Performance, leden 2025, Kaggle). Týmová práce, tým řeší 8 úloh v Bloku 2, uživatel 4.
 - **Blok 1 je hotový** (analýza kontingenční tabulky ve Wordu, 4ft-Miner, SD4ft-Miner, CF-Miner s interpretacemi).
